@@ -6,10 +6,11 @@ import SwapiProvider from "../context/SwapiAPI";
 test('Test Character Card', () => {
 
     const component = renderer.create(
-        <CharacterCard /> //Need to figure out how to pass context to tests
+        <SwapiProvider>  
+            <CharacterCard />
+        </SwapiProvider>
     );
 
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
-
 });
